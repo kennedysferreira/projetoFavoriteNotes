@@ -2,7 +2,7 @@ import { Container } from "./style";
 
 type ButtonProps = {
   title: string | number;
-  loading: boolean;
+  loading?: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button({ title, loading, ...rest }: ButtonProps) {

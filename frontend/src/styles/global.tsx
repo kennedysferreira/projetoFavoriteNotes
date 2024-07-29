@@ -32,4 +32,13 @@ button, a {
 button:hover, a:hover {
   filter: brightness(1.2);
 }
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', sans-serif;
+  color: ${({theme}) => theme.COLORS.WHITE};
+}
 `;
