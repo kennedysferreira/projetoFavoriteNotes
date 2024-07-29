@@ -5,7 +5,7 @@ export const Container = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 250px auto;
-  grid-template-rows: 7.6rem 12.8rem auto 6.4rem;
+  grid-template-rows: 7.6rem 12.8rem auto 4.8rem;
   grid-template-areas: 
   "brand header" 
   "menu search" 
@@ -37,11 +37,20 @@ padding-top: 1rem;
 
 export const Search = styled.div`
 grid-area: search;
+padding: 2.4rem 4.8rem 0;
 `;
+
+
 export const Content = styled.div`
 grid-area: content;
 `;
 export const NewNote = styled.button`
 grid-area: newNote;
-background-color: ${({theme}) => theme.COLORS.BACKGROUND_900};
+background-color: ${({theme}) => theme.COLORS.ORANGE};
+border: none;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.8rem;
+font-size: 1rem;
 `;
