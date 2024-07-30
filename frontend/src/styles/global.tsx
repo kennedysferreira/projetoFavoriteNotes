@@ -10,14 +10,14 @@ export default createGlobalStyle`
 }
 
 #root {
-  font-size: 62.5%;
+  
   font-family: 'Roboto Slab', sans-serif;
 }
 
 body {
   background: ${({theme}) => theme.COLORS.BACKGROUND_800};
   color: ${({theme}) => theme.COLORS.WHITE};
-  font-size: 1.6rem;
+ 
 }
 
 a {

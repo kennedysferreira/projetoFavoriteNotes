@@ -1,9 +1,13 @@
 import { Container } from "./style";
 
-export function Tag({title}: {title: string}) {
+type TagProps = {
+  title: string | null | undefined;
+}
+
+export function Tag({ title, ...rest }: TagProps) {
   return (
-    <Container>
+    <Container {...rest}>
       <span>{title}</span>
     </Container>
-  )
+  );
 }
