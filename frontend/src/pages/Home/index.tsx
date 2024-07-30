@@ -38,8 +38,8 @@ export function Home() {
 
       </Content>
 
-      <NewNote>
-        <FiPlus/>
+      <NewNote to='/new'>
+        <FiPlus/> 
         Criar Nota
       </NewNote>
     </Container>
