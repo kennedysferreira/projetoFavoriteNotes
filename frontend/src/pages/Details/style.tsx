@@ -27,7 +27,7 @@ export const Links = styled.ul`
 `;
 
 export const Content = styled.div`
-  max-width: 55rem;
+  max-width: 560px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -37,15 +37,15 @@ export const Content = styled.div`
   }
 
   > h1 {
-    font-size: 3.6rem;
+    font-size: 36px;
     font-weight: 500;
-    padding-top: 6.4rem;
+    padding-top: 64px;
   }
 
   > p {
-    font-size: 1.6rem;
-    line-height: 3.2rem;
-    margin-top: 1.6rem;
+    font-size: 16px;
+    line-height: 32px;
+    margin-top: 16px;
     text-align: justify;
   }
 `;

@@ -10,5 +10,5 @@ export const Container = styled.button<ContainerProps>`
     $isactive === 'true' ? theme.COLORS.ORANGE : theme.COLORS.GRAY_100};
   background: transparent;
   border: none;
-  font-size: 1.4rem;
+  font-size: 14px;
 `;
