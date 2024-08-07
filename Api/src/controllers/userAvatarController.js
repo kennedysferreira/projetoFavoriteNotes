@@ -1,26 +1,26 @@
-const knex = require("knex");
+const knex = require('../database/knex');
 const AppError = require("../utils/appError");
 const DiskStorage = require("../providers/DiskStorage");
 
 class UserAvatarController {
   async update(req, res) {
     const user_id = req.user.id;
-    const { filename } = req.file;
-    const user = await knex("users").where({ user_id }).first();
-    const disckStorage = new DiskStorage();
+    const avatarFilename = req.file.filename;
+    const user = await knex("users").where({ id: user_id }).first();
+    const diskStorage = new DiskStorage();
 
     if (!user) {
-      throw new AppError("User not found", 404);
+      throw new AppError("User not authorized", 401);
     }
 
     if (user.avatar) {
-      await disckStorage.deleteFile(user.avatar);
+      await diskStorage.deleteFile(user.avatar);
     }
 
-    const fileName = await disckStorage.saveFile(filename);
-    user.avatar = fileName;
+    const filename = await diskStorage.saveFile(avatarFilename);
+    user.avatar = filename;
 
-    await knex("users").update(user).where({ id: user_id });
+    await knex("users").where({ id: user_id }).update({ avatar: filename });
 
     return res.json(user);
   }
