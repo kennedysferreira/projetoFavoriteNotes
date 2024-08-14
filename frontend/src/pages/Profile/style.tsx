@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
@@ -18,8 +18,13 @@ export const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_100};
       font-size: 24px;
     }
+
+    button {
+      background: none;
+      border: none;
+    }
   }
-`
+`;
 
 export const Form = styled.form`
   max-width: 340px;
@@ -28,7 +33,7 @@ export const Form = styled.form`
   > div:nth-child(4) {
     margin-top: 24px;
   }
-`
+`;
 
 export const Avatar = styled.div`
   position: relative;
@@ -36,11 +41,13 @@ export const Avatar = styled.div`
 
   width: 186px;
   height: 186px;
-  
+
   > img {
     border-radius: 50%;
     width: 186px;
     height: 186px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
   }
 
   > label {
@@ -70,4 +77,4 @@ export const Avatar = styled.div`
       color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     }
   }
-`
+`;

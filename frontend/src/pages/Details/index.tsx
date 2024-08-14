@@ -4,7 +4,7 @@ import { Header } from "../../components/header";
 import { Section } from "../../components/section";
 import { Tag } from "../../components/tags";
 import { ButtonText } from "../../components/buttonText";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../../services/api";
 
@@ -24,8 +24,20 @@ export function Details() {
       name: string;
     }[];
   };
+  const navigate = useNavigate();
   const { id } = useParams();
   const [data, setData] = useState<DataType | null>(null);
+
+  async function handleRemove() {
+    const confirm = window.confirm("Tem certeza que deseja excluir esta nota?");
+
+    if (confirm) {
+      await api.delete(`/notes/${id}`);
+      navigate(-1)
+    }
+    
+    return
+  }
 
   useEffect(() => {
     async function getNote() {
@@ -44,7 +56,7 @@ export function Details() {
       {data && (
         <main>
           <Content>
-            <ButtonText title="Excluir Nota"></ButtonText>
+            <ButtonText title="Excluir Nota" onClick={handleRemove}></ButtonText>
 
             <h1>{data.note.title}</h1>
             <p>{data.note.description}</p>
@@ -70,7 +82,7 @@ export function Details() {
                 ))}
               </Section>
             )}
-            <Button title="Voltar" onClick={() => window.history.back()} />
+            <Button title="Voltar" onClick={() => navigate(-1)} />
           </Content>
         </main>
       )}

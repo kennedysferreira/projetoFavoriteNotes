@@ -5,12 +5,13 @@ import { Button } from "../../components/button";
 import avatarProfile from "../../assets/avatarProfile.svg";
 
 import { Container, Form, Avatar } from "./style";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
+import { useNavigate } from "react-router-dom";
 
 export function Profile() {
+  const navigate = useNavigate();
   const { user, updateProfile } = useAuth();
 
   const [name, setName] = useState(user.name);
@@ -18,7 +19,9 @@ export function Profile() {
   const [password, setPassword] = useState("");
   const [oldPassword, setOldPassword] = useState("");
 
-  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarProfile
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatarProfile;
   const [avatar, setAvatar] = useState(avatarUrl);
   const [avatarFile, setAvatarFile] = useState(null);
 
@@ -32,21 +35,28 @@ export function Profile() {
     };
 
     await updateProfile({ user: updatedUser, avatarFile });
+    window.location.reload();
   }
   function handleAvatar(e: any) {
     const file = e.target.files[0];
     setAvatarFile(file);
-    
+
     const imagePreview = URL.createObjectURL(file);
     setAvatar(imagePreview);
+   
   }
 
   return (
     <Container>
       <header>
-        <Link to="/">
+        <button
+          type="button"
+          onClick={() => {
+            navigate('/');
+          }}
+        >
           <FiArrowLeft />
-        </Link>
+        </button>
       </header>
 
       <Form>

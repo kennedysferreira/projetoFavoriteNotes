@@ -54,6 +54,7 @@ export const Content = styled.div`
   grid-area: content;
   padding: 0 64px;
   overflow-y: auto;
+  
 `
 export const NewNote = styled(Link)`
   grid-area: newnote;

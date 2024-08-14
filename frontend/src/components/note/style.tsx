@@ -6,6 +6,7 @@ background-color: ${({theme}) => theme.COLORS.BACKGROUND_700};
 border: none;
 padding: 16px;
 margin-bottom: 16px;
+border-radius: 12px;
 
 >h1 {
   flex: 1;

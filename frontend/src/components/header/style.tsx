@@ -20,6 +20,8 @@ export const Profile = styled(Link)`
     height: 46px;
     border-radius: 50%;
     margin-right: 16px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
   }
 
   > div {

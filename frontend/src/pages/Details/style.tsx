@@ -12,7 +12,6 @@ export const Container = styled.div`
   > main {
     grid-area: content;
     overflow-y: scroll;
-    padding: 6.4rem 0;
   }
 `;
 
@@ -22,6 +21,10 @@ export const Links = styled.ul`
     margin-top: 1.2rem;
     a {
       color: ${({ theme }) => theme.COLORS.WHITE};
+      transition: ease-out 0.2s;
+    }
+    a:hover {
+      color: ${({ theme }) => theme.COLORS.ORANGE};
     }
   }
 `;

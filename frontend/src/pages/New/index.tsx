@@ -6,9 +6,10 @@ import { Header } from "../../components/header";
 import { Input } from "../../components/input";
 
 import { Container, Form } from "./style";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../services/api";
+import { ButtonText } from "../../components/buttonText";
 
 export function New() {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ export function New() {
     console.log(title, description, tags, links);
 
     alert("Nota criada com sucesso");
-    navigate("/");
+    navigate(-1);
   }
 
   function handleAddLink() {
@@ -84,7 +85,7 @@ export function New() {
         <Form>
           <header>
             <h1>Criar nota</h1>
-            <Link to="/">voltar</Link>
+            <ButtonText onClick={() => navigate(-1)} title={"Voltar"}></ButtonText>
           </header>
 
           <Input
