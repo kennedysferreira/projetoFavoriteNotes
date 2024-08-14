@@ -6,12 +6,11 @@ import { Header } from "../../components/header";
 import { Input } from "../../components/input";
 
 import { Container, Form } from "./style";
-import { Link,  useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../services/api";
 
 export function New() {
-
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -23,6 +22,24 @@ export function New() {
   const [newTag, setNewTag] = useState("");
 
   async function handleAddNewNote(e: any) {
+    if (!title || !description) {
+      return alert(
+        "Por favor, adicione um título e uma descriçao para sua nota"
+      );
+    }
+
+    if (newTag) {
+      return alert(
+        "Clique para adioncar ou deixe o campo vazio para adicionar uma nova tag"
+      );
+    }
+
+    if (newLink) {
+      return alert(
+        "Clique para adioncar ou deixe o campo vazio para adicionar um novo link"
+      );
+    }
+
     e.preventDefault();
     await api.post("/notes", {
       title,
@@ -30,6 +47,7 @@ export function New() {
       tags,
       links,
     });
+    console.log(title, description, tags, links);
 
     alert("Nota criada com sucesso");
     navigate("/");

@@ -4,10 +4,11 @@ import { Tag } from "../tags";
 
 type NoteProps = {
   data: any;
+  onClick: () => void;
 };
-export function Note({ data, ...rest }: NoteProps) {
+export function Note({ data, onClick,...rest }: NoteProps) {
   return (
-    <Container {...rest}>
+    <Container onClick={onClick} {...rest}>
       <h1>{data.title}</h1>
       {data.tags && (
         <footer>

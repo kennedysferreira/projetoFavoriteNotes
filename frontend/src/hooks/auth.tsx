@@ -46,7 +46,7 @@ function AuthProvider({ children }: any) {
       await api.put(`/users`, user);
       localStorage.setItem("@rocketnotes:user", JSON.stringify(user));
       alert("Perfil atualizado com sucesso!");
-      
+
       setData({
         token: data.token,
         user: data.user,

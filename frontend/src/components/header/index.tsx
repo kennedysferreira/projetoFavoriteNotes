@@ -4,11 +4,12 @@ import { Container, Profile, Logout } from "./style";
 import { RiShutDownLine } from "react-icons/ri";
 import avatarProfile from "../../assets/avatarProfile.svg";
 
+
 export function Header() {
   const {signOut, user} = useAuth()
+ 
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarProfile
-
 
   return (
     <Container>
