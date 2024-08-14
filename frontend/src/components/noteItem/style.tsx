@@ -1,23 +1,23 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 type ContainerProps = {
-  $isnew?: 'true' | 'false';
+  $isnew: 'true' | 'false';
 };
 
 export const Container = styled.div<ContainerProps>`
   display: flex;
   align-items: center;
 
-  background-color: ${({ theme, $isnew }) => $isnew ? "transparent" : theme.COLORS.BACKGROUND_900};
+  background-color: ${({ theme, $isnew }) => $isnew === 'true' ? "transparent" : theme.COLORS.BACKGROUND_900};
   color: ${({ theme }) => theme.COLORS.GRAY_300};
 
-  border: ${({ theme, $isnew }) => $isnew ? `1px dashed ${theme.COLORS.GRAY_300}` : "none"};
+  border: ${({ theme, $isnew }) => $isnew === 'true' ? `1px dashed ${theme.COLORS.GRAY_300}` : "none"};
 
   margin-bottom: 8px;
   border-radius: 10px;
   padding-right: 16px;
 
-  > button { 
+  > button {
     border: none;
     background: none;
   }
@@ -45,4 +45,4 @@ export const Container = styled.div<ContainerProps>`
       color: ${({ theme }) => theme.COLORS.GRAY_300};
     }
   }
-`
+`;
