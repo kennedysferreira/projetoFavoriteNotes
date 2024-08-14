@@ -75,6 +75,7 @@ export function New() {
   function handleRemoveTag(deleted: string) {
     const filteredTags = tags.filter((tag) => tag !== deleted);
     setTags(filteredTags);
+    
   }
 
   return (
@@ -109,6 +110,8 @@ export function New() {
             ))}
             <NoteItem
               isNew
+              placeholder="Novo link"
+              
               value={newLink}
               onChange={(e) => setNewLink(e.target.value)}
               onClick={handleAddLink}
@@ -126,6 +129,7 @@ export function New() {
               ))}
               <NoteItem
                 isNew
+                value={newTag}
                 placeholder="Nova tag"
                 onChange={(e) => setNewTag(e.target.value)}
                 onClick={handleAddTag}
