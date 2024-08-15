@@ -1,97 +1,84 @@
 
 # FavoriteNotes
-
-FavoriteNotes é uma aplicação web que permite aos usuários criar, editar, visualizar e excluir notas, 
-as notas podem ser marcadas como favoritas para fácil acesso, a aplicação é dividida em dois componentes principais: 
-o frontend, que gerencia a interface do usuário, e o backend, que lida com a lógica de negócios e o gerenciamento de dados.
+FavoriteNotes is a web application that allows users to create, edit, view, and delete notes. Notes can be marked as favorites for easy access. The application is divided into two main components: the frontend, which manages the user interface, and the backend, which handles business logic and data management.
 
 
-## Funcionalidades
+## Features
+- Create Notes: Allows users to add new notes with a title and content.
+- Edit Notes: Functionality to edit existing notes.
+- Delete Notes: Ability to delete notes that are no longer needed.
+- Search Notes: You can easily find a specific note by searching for a keyword.
+- Filter by Tags: You can filter by a specific tag, checking all the notes created under a particular topic.
 
-- Criar Notas: Permite aos usuários adicionar novas notas com título e conteúdo.
-- Editar Notas: Funcionalidade para editar notas existentes.
-- Excluir Notas: Possibilidade de deletar notas que não são mais necessárias.
-- Buscar Notas: Voce pode facilmente encontrar uma nota especifica buscando por um palavra chave.
-- Filtrar por tags: Pode filtrar por uma tag especifica verificando todas as notas que foram criadas com um determinado assunto.
-
-## Arquitetura do projeto
+## Project Architecture
 
 ## Frontend
-O frontend foi construído usando React, com suporte a TypeScript e Vite para a configuração do ambiente de desenvolvimento.
+The frontend is built using React, with TypeScript support and Vite for the development environment setup.
 
-#### Principais Tecnologias Utilizadas:
-- React: Biblioteca JavaScript para a construção de interfaces de usuário.
-- Vite: Ferramenta de build e desenvolvimento rápido.
-- React Router: Gerenciamento de rotas.
-- Styled Components: Estilização de componentes de forma isolada.
-- Axios: Cliente HTTP para requisições à API backend.
-#### Scripts Disponíveis:
-- dev: Inicia o servidor de desenvolvimento.
-- build: Compila a aplicação para produção.
-- lint: Verifica o código com ESLint.
-- preview: Pré-visualiza a aplicação compilada.
+#### Key Technologies Used:
+- React: JavaScript library for building user interfaces.
+- Vite: Fast build and development tool.
+- React Router: Route management.
+- Styled Components: Isolated component styling.
+- Axios: HTTP client for making API requests to the backend.
+#### Available Scripts:
+- dev: Starts the development server.
+- build: Compiles the application for production.
+- lint: Checks the code with ESLint.
+- preview: Previews the compiled application.
 ## Backend
-O backend é uma API desenvolvida utilizando Node.js e Express. Ele gerencia a lógica de autenticação, operações CRUD das notas e a comunicação com o banco de dados SQLite.
+The backend is an API developed using Node.js and Express. It manages authentication logic, CRUD operations for notes, and communication with the SQLite database.
 
-#### Principais Tecnologias Utilizadas:
-- Express: Framework minimalista para Node.js.
-- Knex: Query builder SQL para operações com banco de dados.
-- SQLite: Banco de dados leve e eficiente.
-- JWT: Autenticação baseada em tokens.
-- BcryptJS: Hashing de senhas para armazenamento seguro.
-#### Scripts Disponíveis:
-- dev: Inicia o servidor de desenvolvimento usando Nodemon.
-- migrate: Executa as migrações do banco de dados usando Knex.
-## Instalação
+#### Key Technologies Used:
+- Express: Minimalist framework for Node.js.
+- Knex: SQL query builder for database operations.
+- SQLite: Lightweight and efficient database.
+- JWT: Token-based authentication.
+- BcryptJS: Password hashing for secure storage.
+#### Available Scripts:
+- dev: Starts the development server using Nodemon.
+- migrate: Runs database migrations using Knex.
+## Installation
+###Prerequisites
+Make sure you have Node.js and npm installed on your machine.
 
-Pré-requisitos
-Certifique-se de ter o Node.js e o npm instalados em sua máquina.
-
-### Passo a Passo
-Clone o repositório:
+### Steps
+Clone the repository:
 
 ```bash
 git clone https://github.com/kennedysferreira/projetoFavoriteNotes.git
 ```
-Instale as dependências do backend:
+Install backend dependencies:
 
 ```bash
 cd projetoFavoriteNotes/api
 npm install
 ```
-Instale as dependências do frontend:
+Install frontend dependencies:
 
 ```bash
 cd ../frontend
 npm install
 ```
-Configure as variáveis de ambiente no backend criando um arquivo .env:
 
-``` makefile
-MONGODB_URI=<sua_uri_mongodb>
-PORT=3333
-JWT_SECRET=<sua_chave_secreta>
-```
-Inicie o servidor backend:
+Start the backend server:
 
 ```bash
 cd ../api
 npm run dev
 ```
-Inicie o servidor frontend:
+Start the frontend server:
 
 ```bash
 cd ../frontend
 npm run dev
 ```
-Acesse http://localhost:3333 no seu navegador para utilizar a aplicação.
+Access http://localhost:5173 in your browser to use the application.
 
 
 
 
-## Contribuindo
+## Contributing
+Contributions are always welcome!
 
-Contribuições são sempre bem-vindas!
-
-Se você tiver sugestões de melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.
-
+If you have suggestions for improvements, feel free to open an issue or submit a pull request.
