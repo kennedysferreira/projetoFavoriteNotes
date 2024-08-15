@@ -76,7 +76,6 @@ class NotesController {
     return res.json(notesWithTags);
   }
 
-  async 
 }
 
 module.exports = NotesController;
