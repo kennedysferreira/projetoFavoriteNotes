@@ -12,3 +12,4 @@ notesRouter.delete('/:id', noteController.delete)
 notesRouter.get('/', noteController.index)
 
 module.exports = notesRouter
+
