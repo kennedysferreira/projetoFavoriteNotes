@@ -1,10 +1,14 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext({} as any);
 
+
 function AuthProvider({ children }: any) {
   const [data, setData] = useState({} as any);
+
+  
 
   async function signIn({ email, password }: any) {
     try {
@@ -29,9 +33,12 @@ function AuthProvider({ children }: any) {
   }
 
   function signOut() {
+   
     localStorage.removeItem("@rocketnotes:token");
     localStorage.removeItem("@rocketnotes:user");
+    
     setData({} as any);
+
   }
 
   async function updateProfile({ user, avatarFile }: any) {
