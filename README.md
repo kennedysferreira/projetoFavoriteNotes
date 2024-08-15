@@ -1,7 +1,9 @@
 
 # FavoriteNotes
 
-FavoriteNotes é uma aplicação web que permite aos usuários criar, editar, visualizar e excluir notas. As notas podem ser marcadas como favoritas para fácil acesso. A aplicação é dividida em dois componentes principais: o frontend, que gerencia a interface do usuário, e o backend, que lida com a lógica de negócios e o gerenciamento de dados.
+FavoriteNotes é uma aplicação web que permite aos usuários criar, editar, visualizar e excluir notas, 
+as notas podem ser marcadas como favoritas para fácil acesso, a aplicação é dividida em dois componentes principais: 
+o frontend, que gerencia a interface do usuário, e o backend, que lida com a lógica de negócios e o gerenciamento de dados.
 
 
 ## Funcionalidades
