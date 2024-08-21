@@ -7,8 +7,6 @@ export const AuthContext = createContext({} as any);
 function AuthProvider({ children }: any) {
   const [data, setData] = useState({} as any);
 
-  
-
   async function signIn({ email, password }: any) {
     try {
       const response = await api.post("/sessions", {

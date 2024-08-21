@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 export function Profile() {
   const navigate = useNavigate();
   const { user, updateProfile } = useAuth();
-
+  
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
   const [password, setPassword] = useState("");
